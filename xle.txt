@@ -25,3 +25,13 @@ root
 Password:
 ******
 For security, remove write permissions from these directories: '/var/www/xle/mag2.xle/app/etc'
+-------------------------------------------------------------------------------------------------------------
+sudo chmod -R 777 /var/www/xle/mag2.xle/var/
+
+Основные команды для развертывания проекта
+Обычно при любом копировании или перемещении проекта нужно их выполнять
+php bin/magento setup:upgrade
+php bin/magento setup:di:compile
+php bin/magento setup:static-content:deploy -s en_US en_GB
+php bin/magento indexer:reindex
+php bin/magento cache:flush
